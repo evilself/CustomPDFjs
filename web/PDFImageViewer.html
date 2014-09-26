@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">    
+        <title>PDF Image Viewer</title>
+        <script src="jquery-1.11.1.min.js"></script>
+        <script>
+            var parent_url;
+            function check_url(element) {                  
+                   
+                   //alert(jQuery('#myJS').contents().find('html').html());                   
+                    parent_url = jQuery('#'+element.id).attr('value');
+                   
+                    jQuery('#myJS').remove();
+                    jQuery('#dvPDF').append('<iframe id="myJS" style="height:800px;width:90%" src="viewer.html"></iframe>');
+                   //alert(parent_url);                  
+            }
+           
+        </script>
+       
+    </head>
+  <body style="width:100%">
+   <div style="float:left; width:20%">
+        <ul >
+            <li ><button id="a" value="compressedMonkey.pdf" onclick="check_url(this)" >Click here for compressedMonkey.pdf</button></li>
+            <li ><button id="b" value="Thief.pdf"  onclick="check_url(this)" >Click here for Thief guide</button></li>
+            <li ><button id="c" value="Wasteland 2.pdf" onclick="check_url(this)" >Click here for Wasteland 2.pdf</button></li>           
+       </ul>
+    </div>
+
+     <div id="dvPDF" style="float:right; width:80%">
+         <!--iframe id="myJS" style="height:800px;width:90%" src="viewer.html"></iframe-->         
+      </div>    
+  </body>
+</html>
+
+  
